@@ -104,4 +104,8 @@ void Flip(void)
 }
 
 
-
+void Message_Draw(int x, int y, int hp)
+{
+	char *index = (cs_BackBuffer[y] + x);
+	sprintf_s(index, 40, "Player HP : %d ", hp);
+}

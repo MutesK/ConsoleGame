@@ -69,7 +69,7 @@ CBaseObject* CGameScene::CollisionCheck(int x, int y)
 	{
 		// x´Â 0,1,2 
 		int Px = player->getX();
-		if (Px == x || Px == (x + 1) || Px == (x + 2))
+		if (Px ==  x ||Px == (x - 1) || Px == (x - 2) || Px == (x - 3))
 		{
 			return player;
 		}
@@ -84,7 +84,7 @@ CBaseObject* CGameScene::CollisionCheck(int x, int y)
 			if ((*iter)->getY() == y)
 			{
 				int Ex = (*iter)->getX();
-				if (Ex == x || Ex == (x + 1) || Ex == (x + 2))
+				if (Ex == x || Ex ==  (x - 1) || Ex == (x - 2) || Ex == (x - 3))
 				{
 					return (*iter);
 				}
@@ -97,9 +97,9 @@ bool CGameScene::GameOverCheck()
 {
 	CList<CBaseObject *>::iterator iter;
 
-	if (player->getHp() == 0)
+	if (player->getHp() <= 0)
 	{
-		return false;
+		return true;
 	}
 
 
@@ -131,7 +131,8 @@ void CGameScene::CollisionProcess()
 	if (player->dieFlag)
 	{
 		int hp = player->getHp();
-		player->setHp(hp--);
+		player->setHp(hp - 1);
+		player->dieFlag = false;
 	}
 	for (iter = ObjectList.begin(); iter != ObjectList.end(); iter++)
 	{
@@ -150,5 +151,8 @@ void CGameScene::Draw()
 	{
 		(*iter)->Draw();
 	}
+
 	player->Draw();
+	Message_Draw(0, dfSCREEN_HEIGHT - 1, player->getHp());
+
 }

@@ -1,3 +1,5 @@
-﻿  main.cpp
+﻿  GameScene.cpp
+d:\workspace\consolegame\consolegame\list.h(55): warning C4715: 'CList<CBaseObject *>::iterator::operator*': 모든 제어 경로에서 값을 반환하지는 않습니다.
+cl : 명령줄 warning D9028: 최소 다시 빌드에 실패했습니다. 정상 빌드로 되돌립니다.
   ConsoleGame.vcxproj -> D:\Workspace\ConsoleGame\Debug\ConsoleGame.exe
   ConsoleGame.vcxproj -> D:\Workspace\ConsoleGame\Debug\ConsoleGame.pdb (Full PDB)
