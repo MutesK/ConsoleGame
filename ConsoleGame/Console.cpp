@@ -104,8 +104,15 @@ void Flip(void)
 }
 
 
-void Message_Draw(int x, int y, int hp)
+void Hp_Draw(int x, int y, int hp)
 {
 	char *index = (cs_BackBuffer[y] + x);
 	sprintf_s(index, 40, "Player HP : %d ", hp);
+}
+
+void Message_Draw(int x, int y, char * message)
+{
+	char *index = (cs_BackBuffer[y] + x);
+
+	memcpy(index, message, strlen(message) - 1);
 }

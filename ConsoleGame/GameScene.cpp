@@ -44,7 +44,10 @@ bool CGameScene::Run()
 	CollisionProcess();
 
 	if (GameOverCheck())
+	{
+		this->LoadScene(CGAMEOVERSCENE);
 		return true;
+	}
 	Draw();
 
 	return false;
@@ -153,6 +156,6 @@ void CGameScene::Draw()
 	}
 
 	player->Draw();
-	Message_Draw(0, dfSCREEN_HEIGHT - 1, player->getHp());
+	Hp_Draw(0, dfSCREEN_HEIGHT - 1, player->getHp());
 
 }

@@ -48,7 +48,7 @@ void Sprite_Draw(int x, int y, char Sprite);
 //-------------------------------------------------------------
 void Flip(void);
 
-void Message_Draw(int x, int y, int hp);
-
+void Hp_Draw(int x, int y, int hp);
+void Message_Draw(int x, int y, char * message);
 
 #endif
