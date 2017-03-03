@@ -6,7 +6,7 @@
 
 CGameScene::CGameScene()
 {
-	player = new CPlayer(30,20, "#=#", this);
+	player = new CPlayer(30,20, ".|.", this);
 
 	int StartX = 10;
 	int StartY = 1;
